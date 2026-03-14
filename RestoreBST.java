@@ -38,6 +38,17 @@ public class RestoreBST{
 
     inorder(root.right);
 }
+    static Node insert(Node root,int val){
+        if(root==null)
+            return new Node(val);
+
+        if(val<root.data)
+            root.left=insert(root.left,val);
+        else
+            root.right=insert(root.right,val);
+
+        return root;
+    }
     public static TreeNode buildTree(Scanner sc){
         int val=sc.nextInt();
         if(val==-1){
